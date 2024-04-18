@@ -16,7 +16,7 @@ export const SocketContextProvider = ({ children }) => {
 
     useEffect(()=> {
         if(authUser) {
-            const socket = io("http://localhost:9000", {
+            const socket = io("https://baatcheet-ejw0.onrender.com/", {
                 query: {userId:authUser.id,}
             });
             setSocket(socket);
