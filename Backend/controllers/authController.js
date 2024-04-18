@@ -5,6 +5,7 @@ import generateToken from "../utils/generaateJWT.js";
 export const signup = async (req, res) => {
     try {
         const { fullName, username, password, confirmPassword, gender } = req.body;
+        console.log({ fullName, username, password, confirmPassword, gender })
         if (password !== confirmPassword) {
             return res.status(400).json({error: 'password is not matching '});
         }
@@ -18,8 +19,8 @@ export const signup = async (req, res) => {
 
         // profile pic
 
-        const profilePicBoy = "https://images.app.goo.gl/jcLCraJSC2K1V2sv9";
-        const profilePicGirl = "https://images.app.goo.gl/N2puFfj7daLZC7fT8"
+        const profilePicBoy = "https://img.freepik.com/premium-vector/young-smiling-man-avatar-man-with-brown-beard-mustache-hair-wearing-yellow-sweater-sweatshirt-3d-vector-people-character-illustration-cartoon-minimal-style_365941-860.jpg";
+        const profilePicGirl = "https://t3.ftcdn.net/jpg/06/17/13/26/360_F_617132669_YptvM7fIuczaUbYYpMe3VTLimwZwzlWf.jpg"
         
         const newUser = new User({
             fullName,
